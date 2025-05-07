@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppression</title>
+</head>
+
+<body>
+    <h1>Supprimer la pièce</h1>
+    <p>Confirmer la suppression de <strong>{{ piece.designation }}</strong> ?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Oui</button>
+        <a href="{% url 'stock:liste_pieces' %}">Annuler</a>
+    </form>
+
+</body>
+
+</html>

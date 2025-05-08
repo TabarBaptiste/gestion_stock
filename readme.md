@@ -1,124 +1,20 @@
-# 📦 Gestion de Stock
+# 🔎 Démarche de conception de l'application de gestion de stock
 
-Application Web de gestion de stock développée avec **Django**, **Bootstrap** et **SQLlite**, destinée à faciliter le suivi, l'importation, l'édition et la visualisation de pièces mécaniques (dans un contexte aéronautique).
+Dans le cadre de ce projet, j’ai choisi de développer une **interface graphique web** plutôt que de me contenter d’un simple fichier Excel. Bien qu’Excel soit un outil accessible et pratique pour gérer de petites quantités de données, il devient vite limité dès que l'on souhaite **centraliser les informations**, **filtrer et trier dynamiquement les données**. Une application web permet d’offrir une **expérience utilisateur plus fluide**, une **meilleure ergonomie**, et surtout une **structure solide** pour faire évoluer le système.
 
----
+## ⚙️ Pourquoi Python et Django ?
 
-## 🚀 Fonctionnalités
+J’ai choisi **Python** car c’est un langage à la fois lisible, puissant et très populaire dans le domaine de l’automatisation. Il permet de se concentrer sur la logique métier sans perdre trop de temps avec des détails techniques complexes.
 
-<!-- ### 🔐 Authentification
+Pour structurer mon projet, j’ai utilisé le **framework Django**, qui repose sur Python. Django facilite le développement rapide d'applications web robustes grâce à ses nombreux outils intégrés :
 
-- Connexion, inscription, déconnexion des utilisateurs
-- Accès limité aux fonctionnalités d'administration pour les utilisateurs staff -->
+* un système d’authentification prêt à l’emploi,
+* une interface d’administration automatique,
+* un ORM (Object Relational Mapper) pour manipuler la base de données sans écrire de SQL brut,
+* et une structure MVC claire.
 
-### 📋 Gestion des pièces
+En utilisant Django, j’ai pu gagner du temps, sécuriser mon application et organiser mon code de façon propre et évolutive.
 
-- Affichage de la liste des pièces
-- Ajout, modification, suppression des pièces (réservé aux administrateurs)
-- Champ "disponible" automatiquement basé sur la quantité
-- Calcul automatique du **prix de vente avec réduction**
-- Affichage dynamique des prix, quantité et disponibilité
+### 🗄️ Utilisation de SQLite
 
-### 🔍 Filtrage et Tri
-
-- Barre de recherche dynamique
-- Tri possible par : Désignation, Voiture, Quantité, Prix de vente, Prix réduit, Disponibilité
-<!-- - Filtrage intelligent avec prise en charge de :
-  - Texte (ex: nom de la pièce ou voiture)
-  - Numérique (prix ou quantité)
-  - Booléen (ex: disponible = oui / non) -->
-
-### 📁 Import/Export Excel (en cours)
-
-- Importation de pièces depuis un fichier Excel `.xlsx`
-- Insertion directe dans la base de données après lecture du fichier
-- Export possible à venir
-
-<!-- ### 🎨 Interface utilisateur
-
-- Design responsive avec **Bootstrap 5**
-- Header avec navigation (Accueil, Historique, Importer, Connexion...)
-- Utilisation d’une palette de couleurs agréable (ombres, arrondis, mise en forme claire) -->
-
----
-
-## 🧰 Stack Technique
-
-| Outil        | Rôle                         |
-|--------------|------------------------------|
-| Django       | Framework backend principal  |
-| SQLlite        | Base de données|
-| Bootstrap 5  | Mise en page responsive      |
-| HTML / CSS   | Frontend                     |
-| openpyxl     | Manipulation de fichiers Excel|
-| Python 3.11+ | Langage principal             |
-
----
-<!-- 
-## 📂 Structure du projet
-
-```
-gestion\_stock/
-│
-├── stock/                # App principale
-│   ├── models.py         # Modèle "Piece"
-│   ├── views.py          # Vue liste, ajout, import...
-│   ├── templates/        # Templates HTML (Bootstrap)
-│   └── urls.py
-│
-├── media/                # Fichiers importés (Excel)
-├── static/               # CSS / JS (si besoin)
-├── db.sqlite3            # (ou connexion MySQL)
-└── manage.py
-```` -->
-
----
-
-<!-- ## ▶️ Lancer le projet en local
-
-1. **Cloner le projet :**
-
-```bash
-git clone https://github.com/votre-utilisateur/gestion-stock.git
-
-cd gestion-stock
-````
-
-2. **Installer les dépendances :**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Configurer la base de données dans `settings.py`**
-
-4. **Migrer la base de données :**
-
-   ```bash
-   python manage.py makemigrations
-   python manage.py migrate
-   ```
-
-5. **Créer un superutilisateur :**
-
-   ```bash
-   python manage.py createsuperuser
-   ```
-
-6. **Lancer le serveur :**
-
-   ```bash
-   python manage.py runserver
-   ```
-
---- -->
-
-## ✍️ Auteur
-
-Développé par `Shrek` - Projet de formation
-
----
-
-## 📜 Licence
-
-Projet open-source sous licence MIT.
+Pour la base de données, j’ai opté pour **SQLite**. Ce choix est justifié par le contexte du projet : une application locale, sans besoin de serveur distant ou de gestion multi-utilisateur complexe. SQLite est un moteur de base de données **léger**, **intégré directement dans Django** par défaut, et **suffisamment performant** pour ce type d’usage. Il m’a permis de me concentrer sur la logique métier sans me préoccuper de la configuration d’un serveur de base de données.

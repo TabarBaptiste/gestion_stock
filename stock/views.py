@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Piece
-# from .forms import PieceForm, ImportExcelForm
+from .forms import PieceForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Q
 # import openpyxl

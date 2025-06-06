@@ -29,11 +29,14 @@
                         <a class="nav-link" href="#">Historique</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Se déconnecter</a>
+                        <form id="logout-form" method="post" action="/admin/logout/?next=/">
+                            {% csrf_token %}
+                            <button type="submit" class="nav-link">Se déconnecter</>
+                        </form>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Se connecter</a>
+                        <a class="nav-link" href="/admin/login/?next=/">Se connecter</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">S'inscrire</a>

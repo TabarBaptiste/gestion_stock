@@ -52,7 +52,31 @@ django-admin --version
 
 ---
 
-## 4. Cloner le projet depuis GitHub
+4. Installer Git (uniquement pour Mac)
+
+* Ouvre le Terminal.
+
+* Tape la commande suivante pour installer Git via Homebrew (si Homebrew est installé) :
+
+```bash
+brew install git
+```
+
+* Sinon, tu peux installer Xcode Command Line Tools, qui inclut Git :
+
+```bash
+xcode-select --install
+```
+
+* Vérifie que Git est installé :
+
+```bash
+git --version
+```
+
+---
+
+## 5. Cloner le projet depuis GitHub
 
 * Ouvre un terminal et choisis un dossier où tu veux mettre le projet.
 
@@ -70,7 +94,7 @@ cd gestion_stock
 
 ---
 
-## 5. Lancer le serveur de développement
+## 6. Lancer le serveur de développement
 
 * Lance le serveur Django :
 

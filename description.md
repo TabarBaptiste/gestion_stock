@@ -115,10 +115,10 @@ cd gestion-stock
 
 ## ✍️ Auteur
 
-Développé par `Shrek` - Projet de formation
+Développé par `Yannik CAMON` - Projet de formation
 
 ---
 
 ## 📜 Licence
 
-Projet open-source sous licence MIT.
+Projet open-source.

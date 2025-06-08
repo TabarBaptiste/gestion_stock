@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Q
 # import openpyxl
 from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login
 
 def est_admin(user):
     return user.is_staff
@@ -106,6 +108,31 @@ def supprimer_piece(request, pk):
         piece.delete()
         return redirect('stock:liste_pieces')
     return render(request, 'stock/confirm_delete.html', {'piece': piece})
+
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('stock:liste_pieces')
+        else:
+            messages.error(request, "Nom d'utilisateur ou mot de passe incorrect.")
+    
+    return render(request, 'registration/login.html')
+
+def inscription(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('stock:liste_pieces')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/inscription.html', {'form': form})
 
 # def import_excel(request):
 #     try:

@@ -31,15 +31,15 @@
                     <li class="nav-item">
                         <form id="logout-form" method="post" action="/admin/logout/?next=/">
                             {% csrf_token %}
-                            <button type="submit" class="nav-link">Se déconnecter</>
+                            <button type="submit" class="nav-link">Se déconnecter</button>
                         </form>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/login/?next=/">Se connecter</a>
+                        <a class="nav-link" href="/login">Se connecter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">S'inscrire</a>
+                        <a class="nav-link" href="/inscription/">S'inscrire</a>
                     </li>
                     {% endif %}
                 </ul>

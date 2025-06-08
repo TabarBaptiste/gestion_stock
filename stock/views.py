@@ -7,6 +7,7 @@ from django.db.models import Q
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
 
 def est_admin(user):
     return user.is_staff
@@ -133,6 +134,10 @@ def inscription(request):
     else:
         form = UserCreationForm()
     return render(request, 'registration/inscription.html', {'form': form})
+
+def deconnexion(request):
+    logout(request)
+    return redirect('stock:liste_pieces')
 
 # def import_excel(request):
 #     try:

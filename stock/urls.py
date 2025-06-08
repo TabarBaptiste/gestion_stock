@@ -10,6 +10,7 @@ urlpatterns = [
     path('supprimer/<int:pk>/', views.supprimer_piece, name='supprimer_piece'),
     path('login/', views.user_login, name='login'),
     path('inscription/', views.inscription, name='inscription'),
+    path('deconnexion/', views.deconnexion, name='deconnexion'),
 
     # path('import_excel/', views.import_excel, name='import_excel'),
 ]
